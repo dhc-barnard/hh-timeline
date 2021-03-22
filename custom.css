@@ -1,0 +1,147 @@
+:root {
+  --blue: #0c3a5e;
+  --gold: #d19b55;
+  --red: #800020;
+  --brown: #5e300c;
+  --darkred: #400010;
+}
+
+#timeline {
+	width: 100%;
+	min-height: 600px; /*Do I need to do something different for mobile?*/
+	transition: width 2s;
+}
+
+/*Lengthen the height of the slide portion of the timeline for desktop and mobile*/
+.tl-storyslider {
+	height: 450px !important;
+}
+
+@media only screen and (max-width: 992px) { 
+  .tl-storyslider {
+  	max-height: 350px;
+  }
+}
+
+/*Hide date and time on slide navigation text*/
+.tl-slidenav-description {
+	display: none;
+}
+
+/*Remove text shadows on slide navigation text, and increase contrast - both for accessibility */
+.tl-slidenav-previous .tl-slidenav-content-container.tl-slidenav-inverted .tl-slidenav-icon, .tl-slidenav-next .tl-slidenav-content-container.tl-slidenav-inverted .tl-slidenav-icon, .tl-slidenav-previous .tl-slidenav-content-container.tl-slidenav-inverted .tl-slidenav-title, .tl-slidenav-next .tl-slidenav-content-container.tl-slidenav-inverted .tl-slidenav-title {
+	color: #fff;
+	text-shadow: none;
+}
+
+.tl-slidenav-previous .tl-slidenav-title, .tl-slidenav-next .tl-slidenav-title {
+	opacity: 0.5;
+}
+
+.tl-slidenav-previous .tl-slidenav-content-container .tl-slidenav-icon,
+.tl-slidenav-next .tl-slidenav-content-container .tl-slidenav-icon,
+.tl-slidenav-previous .tl-slidenav-content-container .tl-slidenav-title,
+.tl-slidenav-next .tl-slidenav-content-container .tl-slidenav-title {
+  text-shadow: none;
+}
+
+/*Make the image for the rate icon circular*/
+img.rate-logo {
+	max-width: 50px;
+	border-radius: 50%;
+}
+
+/*Make rate icon on timeline flag small and position*/
+.tl-timemarker-text img.rate-logo {
+	max-width: 12px;
+	transform: translateY(10%);
+}
+
+/*Custom buttons for survey and donate slides*/
+.covid-btn {
+	font-family: "PT Sans", sans-serif;
+	color: #fff;
+	background-color: var(--blue);
+	border-radius: 4px;
+	font-size: 1.5em;
+	letter-spacing: 0.1em;
+	text-align: center;
+	display: inline-block;
+	margin: 25px 0;
+	padding: 0 25px;
+	line-height: 56px;
+	border: 1px solid #fff;
+	overflow: hidden;
+  	text-transform: uppercase;
+	-webkit-transition: background-color 0.5s ease;
+	  -moz-transition: background-color 0.5s ease;
+	  -o-transition: background-color 0.5s ease;
+	  transition: background-color 0.5s ease;
+}
+
+.covid-btn:hover {
+	background-color: #fff;
+	color: var(--blue);
+	border: 1px solid var(--blue);
+}
+
+/*Add and position new icons for expand and shrink*/
+.tl-menubar {
+	top: 460px !important;
+}
+
+.tl-menubar-button {
+	color: #4F4F4F;
+}
+
+.tl-text h3.tl-headline-date {
+	color: #595959;
+}
+
+.tl-icon-fullscreen:after {
+	content: "\e658";
+}
+
+.tl-icon-shrink:after {
+	content: "\e659";
+}
+
+/*Add background-colors to groups on timeline*/
+.tl-timenav > div:nth-child(5) {
+	background-color: var(--blue);
+}
+
+.tl-timenav > div:nth-child(6) {
+	background-color: var(--gold);
+}
+
+.tl-timenav > div:nth-child(7) {
+	background-color: var(--red);
+}
+
+.tl-timenav > div:nth-child(8) {
+	background-color:  var(--brown);
+}
+
+.tl-timenav > div:nth-child(9) {
+	background-color: var(--darkred);
+}
+
+.tl-timegroup .tl-timegroup-message {
+	text-shadow: none;
+}
+
+/*Make flag text darker, but still white on hover*/
+
+.tl-timemarker .tl-timemarker-content-container .tl-timemarker-content.tl-timemarker-content-small .tl-timemarker-text h2.tl-headline {
+	color: #777777;
+}
+
+.tl-timemarker .tl-timemarker-content-container .tl-timemarker-content.tl-timemarker-content-small .tl-timemarker-text h2.tl-headline:hover {
+	color: #fff;
+}
+
+/* Active flag font stay dark gray on hover */
+.tl-timemarker.tl-timemarker-active .tl-timemarker-content-container .tl-timemarker-content .tl-timemarker-text h2.tl-headline:hover {
+	color: #777777;
+}
