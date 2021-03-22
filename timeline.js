@@ -1,3 +1,5 @@
+//Temporary fix to add custom loading screen. Code is from KnightLab: https://cdn.jsdelivr.net/gh/dhc-barnard/hh-timeline/custom.css
+
 var TL = function(t) {
     var e = {};
 
