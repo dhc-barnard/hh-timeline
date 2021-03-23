@@ -7,24 +7,17 @@
 }
 
 #timeline {
-	width: 100%;
-	min-height: 600px; /*Do I need to do something different for mobile?*/
+	min-height: 700px;
 	transition: width 2s;
-}
-
-/*Lengthen the height of the slide portion of the timeline for desktop and mobile*/
-.tl-storyslider {
-	height: 450px !important;
-}
-
-@media only screen and (max-width: 992px) { 
-  .tl-storyslider {
-  	max-height: 350px;
-  }
 }
 
 /*Hide date and time on slide navigation text*/
 .tl-slidenav-description {
+	display: none;
+}
+
+/*Hide image on slide navigation text */
+.tl-slidenav-title > img {
 	display: none;
 }
 
@@ -87,7 +80,8 @@ img.rate-logo {
 
 /*Add and position new icons for expand and shrink*/
 .tl-menubar {
-	top: 460px !important;
+	top: auto !important;
+	bottom: 77px;
 }
 
 .tl-menubar-button {
