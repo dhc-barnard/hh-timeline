@@ -7,7 +7,7 @@
 }
 
 #timeline {
-	min-height: 700px;
+	min-height: 700px; 
 	transition: width 2s;
 }
 

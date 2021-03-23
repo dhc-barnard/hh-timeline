@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>COVID Timeline</title>		   	
+		<!-- <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script> -->
+		<script src="https://cdn.jsdelivr.net/gh/dhc-barnard/hh-timeline/timeline.js"></script>
+		<link title="timeline-styles" rel="stylesheet" 
+              href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/dhc-barnard@latest/hh-timeline/custom.css">
+	</head>
+	<body>
+
+		<section id="timeline" height='700'></section>
+
+		<script type="text/javascript">
+        var options = {
+        	//See https://timeline.knightlab.com/docs/options.html for more options    	
+        	initial_zoom: 8,
+        	timenav_height: 215
+        };
+
+        //Create timeline
+        timeline = new TL.Timeline('timeline', 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTfEHRpDJQJEHWt2Eob8oYMKC0tcm1JXR0hovOoY0VsrbGe4rKD2IKJYrz4X_cFWSJnDdJpWZrD53Ev/pubhtml', options);
+
+        // Set event handlers from Timeline API (https://github.com/NUKnightLab/TimelineJS3/blob/master/API.md)
+		timeline.on("loaded", function(data) {
+		    // Insert the new expand and shrink icons
+			var menuBar = document.getElementsByClassName('tl-menubar')[0];
+
+			menuBar.insertAdjacentHTML('beforeend', '<span class="tl-menubar-button" id="expand" onclick="expandTL()"><span class="tl-icon-fullscreen"></span></span><span class="tl-menubar-button" id="shrink" onclick="shrinkTL()"><span class="tl-icon-shrink"></span></span>');
+
+		
+			//Get the url of the parent window and button ids
+			var winUrl = window.parent.location.href;
+			var expand = document.getElementById("expand");
+			var shrink = document.getElementById("shrink");
+			
+			//If the url contains "timeline.html", then show the shrink button and hide the expand button.
+			if (winUrl.includes("timeline.html")){
+				expand.style.display = "none";
+				shrink.style.display = "block";
+			} 
+
+			else { //If the url does not contain the string, show the expand button and hide the shrink button
+				expand.style.display = "block";
+				shrink.style.display = "none";
+			};
+
+			//Get rid of time data on slider header and navigation
+			function removeTime(){
+				var x = document.querySelectorAll("[class='tl-headline-date']");
+			
+				for (var i=0;i<x.length;i++) {
+
+					//identify small element text and transform into node
+					var smallElem = x[i].querySelector('small');
+
+					if (smallElem != null) {
+						var smallContents = smallElem.innerHTML;
+						var smallText = document.createTextNode(smallContents);
+						var small = document.createElement("small");
+						small.appendChild(smallText);
+
+						//Empty out .tl-headline-date, then re-add small element
+						x[i].innerHTML = "";
+						x[i].appendChild(small);
+					};
+				}
+			} removeTime();
+
+		});
+
+
+		//Selecting the expand button opens the timeline fullscreen in same tab
+		function expandTL(){
+			window.open('timeline.html', '_top');
+		}
+
+		//Shrink button returns viewer to the embedded timeline page on the WP site
+		function shrinkTL(){
+			window.history.back();
+		}
+		</script>
+	</body>
+</html>
