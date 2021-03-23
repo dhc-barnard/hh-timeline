@@ -103,22 +103,27 @@ img.rate-logo {
 /*Add background-colors to groups on timeline*/
 .tl-timenav > div:nth-child(5) {
 	background-color: var(--blue);
+	z-index: 1;
 }
 
 .tl-timenav > div:nth-child(6) {
 	background-color: var(--gold);
+	z-index: 1;
 }
 
 .tl-timenav > div:nth-child(7) {
 	background-color: var(--red);
+	z-index: 1;
 }
 
 .tl-timenav > div:nth-child(8) {
 	background-color:  var(--brown);
+	z-index: 1;
 }
 
 .tl-timenav > div:nth-child(9) {
 	background-color: var(--darkred);
+	z-index: 1;
 }
 
 .tl-timegroup .tl-timegroup-message {
