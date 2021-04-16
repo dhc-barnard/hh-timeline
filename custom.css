@@ -4,6 +4,9 @@
   --red: #800020;
   --brown: #5e300c;
   --darkred: #400010;
+  --darkblue: #072238;
+  --sienna: #ab742e;
+
 }
 
 #timeline {
@@ -81,7 +84,7 @@ img.rate-logo {
 /*Add and position new icons for expand and shrink*/
 .tl-menubar {
 	top: auto !important;
-	bottom: 77px;
+	bottom: 110px;
 }
 
 .tl-menubar-button {
@@ -107,7 +110,7 @@ img.rate-logo {
 }
 
 .tl-timenav > div:nth-child(6) {
-	background-color: var(--gold);
+	background-color: var(--sienna);
 	z-index: 1;
 }
 
@@ -117,12 +120,22 @@ img.rate-logo {
 }
 
 .tl-timenav > div:nth-child(8) {
-	background-color:  var(--brown);
+	background-color:  var(--darkblue);
 	z-index: 1;
 }
 
 .tl-timenav > div:nth-child(9) {
+	background-color: var(--brown);
+	z-index: 1;
+}
+
+.tl-timenav > div:nth-child(10) {
 	background-color: var(--darkred);
+	z-index: 1;
+}
+
+.tl-timenav > div:nth-child(11) {
+	background-color: var(--gold);
 	z-index: 1;
 }
 
